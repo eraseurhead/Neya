@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Road Sign</title>
+    <style>
+        body {
+            background-color: black;
+            color: pink; 
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; 
+            position: relative;
+        }
+
+        .text {
+            font-size: 50px;
+            opacity: 0;
+            color: pink;
+            animation: grandSurprise 4s forwards; 
+            z-index: 1; 
+        }
+
+        @keyframes grandSurprise {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-180deg);
+                filter: brightness(0) blur(10px);
+                color: pink;
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2) rotate(0deg);
+                filter: brightness(1.2) blur(0px);
+                color: lightpink;
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+                filter: brightness(1) blur(0px);
+                color: pink;
+            }
+        }
+
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0; 
+        }
+
+        .firework {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.8) 100%);
+            opacity: 0;
+            animation: fireworkBurst 1s ease-out forwards;
+        }
+
+        @keyframes fireworkBurst {
+            0% {
+                opacity: 1;
+                transform: scale(0.5);
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(3);
+                box-shadow: 0 0 50px rgba(255, 255, 255, 0);
+            }
+        }
+
+        /* Multiple fireworks with different positions, sizes, colors, and timings */
+        .firework:nth-child(1) { width: 60px; height: 60px; top: 10%; left: 10%; background: radial-gradient(circle, rgba(255, 0, 0, 0.6), rgba(255, 0, 0, 0) 70%); animation-delay: 0s; }
+        .firework:nth-child(2) { width: 80px; height: 80px; top: 20%; left: 80%; background: radial-gradient(circle, rgba(0, 255, 0, 0.6), rgba(0, 255, 0, 0) 70%); animation-delay: 0.5s; }
+        .firework:nth-child(3) { width: 100px; height: 100px; top: 30%; left: 30%; background: radial-gradient(circle, rgba(0, 0, 255, 0.6), rgba(0, 0, 255, 0) 70%); animation-delay: 1s; }
+        .firework:nth-child(4) { width: 120px; height: 120px; top: 40%; left: 70%; background: radial-gradient(circle, rgba(255, 255, 0, 0.6), rgba(255, 255, 0, 0) 70%); animation-delay: 1.5s; }
+        .firework:nth-child(5) { width: 60px; height: 60px; top: 20%; left: 50%; background: radial-gradient(circle, rgba(255, 105, 180, 0.6), rgba(255, 105, 180, 0) 70%); animation-delay: 2s; }
+        .firework:nth-child(6) { width: 80px; height: 80px; top: 60%; left: 20%; background: radial-gradient(circle, rgba(0, 255, 255, 0.6), rgba(0, 255, 255, 0) 70%); animation-delay: 2.5s; }
+        .firework:nth-child(7) { width: 100px; height: 100px; top: 50%; left: 80%; background: radial-gradient(circle, rgba(255, 69, 0, 0.6), rgba(255, 69, 0, 0) 70%); animation-delay: 3s; }
+        .firework:nth-child(8) { width: 120px; height: 120px; top: 70%; left: 10%; background: radial-gradient(circle, rgba(128, 0, 128, 0.6), rgba(128, 0, 128, 0) 70%); animation-delay: 3.5s; }
+        .firework:nth-child(9) { width: 60px; height: 60px; top: 80%; left: 40%; background: radial-gradient(circle, rgba(255, 215, 0, 0.6), rgba(255, 215, 0, 0) 70%); animation-delay: 4s; }
+        .firework:nth-child(10) { width: 80px; height: 80px; top: 90%; left: 60%; background: radial-gradient(circle, rgba(0, 255, 0, 0.6), rgba(0, 255, 0, 0) 70%); animation-delay: 4.5s; }
+        /* Add more fireworks if needed */
+    </style>
+</head>
+<body>
+    <div class="fireworks">
+        <!-- Multiple firework effects -->
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
+    </div>
+    <div class="text">pakiss baby</div>
+</body>
+</html>
